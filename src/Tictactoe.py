@@ -27,14 +27,7 @@ class Tictactoe(QWidget):
         QWidget.__init__(self)
         self.setGeometry(250, 250, 400, 100)
         self.setWindowTitle("Tic-Tac-Toe Game")
-
         self.show()
-
-
-        # instruction = QAction("Instruction", self)
-        # menu = QMenuBar()
-        # Instruction = menu.addAction(instruction)
-        # instruction.triggered.connect(self.instruct)
 
 
         self.loop_thread = LoopThread()
@@ -65,11 +58,8 @@ class Tictactoe(QWidget):
         self.pic_label = QLabel()
         pixmap = QPixmap().scaled(75, 75)
         self.pic_label.setPixmap(pixmap)
-        # pixmap.scaled(64, 64, QtCore.Qt.KeepAspectRatio)
 
-        # pixmap = QPixmap("cross.gif")
-
-        # CREATINF LABELS
+        # CREATING LABELS
 
         self.edit = QTextEdit()  # creating text edit
         # self.edit.resize(5000,1000)
@@ -289,15 +279,11 @@ class Tictactoe(QWidget):
             print(r)
 
     def click_connect(self):  # function for connect button
-        self.loop_thread.connect_(self.line.displayText())  # Connects to the server and instruct the user by voice that they are connected to the server
+        self.loop_thread.connect_(self.line.displayText())
         self.loop_thread.start()
         self.edit.append("server connection established")
         self.btn_connect.setEnabled(False)
 
-    # Create a Method for when the quit button is clicked it will stop and close the game(window)
-
-    # def quit(self):  # function for quit button
-    #     sys.exit()
 
     # Handles message from and to a server and their functions
     def handle_gui(self, msg):
@@ -340,10 +326,6 @@ class Tictactoe(QWidget):
             self.btn8.setEnabled(False)
             self.btn9.setEnabled(False)
 
-
-        # elif msg == "play again":
-        #     # print(msg)
-        #     self.edit.append("Press <Quit> to end game.")
 
         elif msg[:10] == "valid move":  #Allowed moves
             symbol = msg[-3]
