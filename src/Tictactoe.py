@@ -5,8 +5,6 @@ import sys
 from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-# from PyQt5.QtGui import QPixmap
-# import random
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QPixmap
@@ -15,11 +13,6 @@ from LoopThread import LoopThread
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction
 from PyQt5.QtGui import QIcon
 # from PyQt5.QtCore import pyqtSlot
-
-
-#
-
-# creating a class called Tictactoe
 
 class Tictactoe(QWidget):
 
@@ -62,9 +55,6 @@ class Tictactoe(QWidget):
         # CREATING LABELS
 
         self.edit = QTextEdit()  # creating text edit
-        # self.edit.resize(5000,1000)
-        # self.edit.setStyleSheet('background-text:white')
-        # self.edit.setStyleSheet('background-image: url(TTT2.jpg);')
         self.edit.setFont(QFont("Ariel", 13))  # setting the font size that will appear on the text edit
         self.edit.setStyleSheet("color: white;  background-image: url(TTT2.jpg);")  # set background picture and color to the text edit
         self.edit.setReadOnly(True)
@@ -72,7 +62,6 @@ class Tictactoe(QWidget):
 
         self.cross = QPixmap("cross.gif")
         self.nought = QPixmap("nought.gif")
-
 
         self.my_symbol = QLabel("MY SYMBOL:")  # creating MY_SYMBOL label
         self.my_symbol.setFont(QFont("Ariel", 8, QtGui.QFont.Bold))
